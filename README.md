@@ -35,7 +35,7 @@ Saya menambahkan folder ```components``` untuk mengatur struktur aplikasi ini. J
         StudentInterface.php
         StudentRepository.php
 
-Jangan lupa pada file ```web\index.php``` tambahkan code dibawah ini untuk mengatur IoC Container
+Jangan lupa pada file ```web\index.php``` tambahkan code dibawah ini untuk Memanage IoC Container
 
 ```php
     \Yii::$container->set('app\components\StudentInterface', 'app\components\StudentRepository');
@@ -64,9 +64,6 @@ return [
     'charset' => 'utf8',
 ];
 ```
-
-**NOTE:**
-
 
 ### Nginx Server
 
@@ -115,3 +112,53 @@ server {
     }
 }
 ```
+
+**NOTE:** Sengaja membuat aplikasi ini tanpa menggunakan CRUD Generator dari Gii agar saya sendiri faham alur kerja dari framework
+ini. Maklum saya belum genap 1 minggu belajar Yii2 ini, hanya bermodal Guide dan liat code didalamnya.
+
+### CURHAT
+Jujur saya kurang begitu puas dengan hasil dari output query Yii yang sulit saya fahami(karena terbatasnya kemampuan saya - alasan pribadi).
+Misal untuk menampilkan data dengan pagination yang dengan mudah diolah di frontend misal jika menggunakan AngualrJs atau framework MVC lainnya.
+
+Oleh sebab itu saya coba membuat outputnya sama dengan ```Eloquent``` punya framework Laravel yang defaultnya adalah ```json```,
+untuk membuatnya sih simple tinggal set output yang akan dikeluarkan menjadi ```json``` bisa dilihat pada file ```AbstractRepository.php``` dan ```StudentRepository.php```
+
+Hasilnya akan menjadi seperti dibawah ini :
+
+```
+{
+    "total": "2",
+    "per_page": 10,
+    "current_page": 1,
+    "last_page": 1,
+    "from": 1,
+    "to": 2,
+    "data": [
+            {
+                "id": 1,
+                "nama": "Edi Santoso",
+                "kelas": "1A",
+                "umur": 19
+            },
+            {
+                "id": 2,
+                "nama": "Fahmi Al Fahreza",
+                "kelas": "2A",
+                "umur": 18
+            }
+    ]
+}
+```
+
+
+
+
+AUTHOR
+------
+
+
+Twitter [@cyberid41](http://twitter.com/cyberid41)
+
+Facebook [cyberid41](http://facebook.com/cyberid41)
+
+Email [edicyber@gmail.com](mailto:edicyebr@gmail.com)
