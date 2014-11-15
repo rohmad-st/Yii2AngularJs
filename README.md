@@ -14,7 +14,6 @@ DIRECTORY STRUCTURE
       config/                       contains application configurations
       controllers/                  contains Web controller classes
       mail/                         contains view files for e-mails
-      models/                       contains model classes
       runtime/                      contains files generated during runtime
       SchoolApp/
             Events/                 contains event handler
