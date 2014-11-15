@@ -57,6 +57,21 @@ return [
     'charset' => 'utf8',
 ];
 ```
+### Create Database
+```
+-- ----------------------------
+-- Table structure for `students`
+-- ----------------------------
+DROP TABLE IF EXISTS `students`;
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) DEFAULT NULL,
+  `jenis_kelamin` varchar(20) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `nomer_telepon` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+```
 
 ### Nginx Server
 
