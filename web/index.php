@@ -9,7 +9,7 @@ require(__DIR__ . '/../vendor/autoload.php');
 require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
 // Register the provider
-\Yii::$container->set('app\components\StudentInterface', 'app\components\StudentRepository');
+\Yii::$container->set('app\SchoolApp\Repositories\StudentInterface', 'app\SchoolApp\Repositories\ActiveRecord\StudentRepository');
 
 $config = require(__DIR__ . '/../config/web.php');
 

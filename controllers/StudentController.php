@@ -1,7 +1,7 @@
 <?php namespace app\controllers;
 
 
-use app\components\StudentInterface;
+use app\SchoolApp\Repositories\StudentInterface;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 
