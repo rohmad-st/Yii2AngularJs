@@ -61,9 +61,9 @@ class StudentRepository extends AbstractRepository implements StudentInterface
         $student = $this->getNew();
 
         $student->nama = $this->e($data['nama']);
-        $student->kelas = $this->e($data['kelas']);
-        $student->umur = $this->e($data['umur']);
-
+        $student->jenis_kelamin = $this->e($data['jenis_kelamin']);
+        $student->alamat = $this->e($data['alamat']);
+        $student->nomer_telepon = $this->e($data['nomer_telepon']);
         $student->save();
 
         return $student;
@@ -80,8 +80,9 @@ class StudentRepository extends AbstractRepository implements StudentInterface
     public function update(Students $student, array $data)
     {
         $student->nama = $this->e($data['nama']);
-        $student->umur = $this->e($data['umur']);
-        $student->kelas = $this->e($data['kelas']);
+        $student->jenis_kelamin = $this->e($data['jenis_kelamin']);
+        $student->alamat = $this->e($data['alamat']);
+        $student->nomer_telepon = $this->e($data['nomer_telepon']);
         $student->update();
 
         return $student;

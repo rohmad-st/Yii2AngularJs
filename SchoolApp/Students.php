@@ -24,7 +24,7 @@ class Students extends ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'jenis_kelamin', 'tempat_lahir', 'alamat', 'nomer_telepon'], 'required'],
+            [['nama', 'jenis_kelamin', 'alamat', 'nomer_telepon'], 'required'],
         ];
     }
 } 
