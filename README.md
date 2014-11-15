@@ -1,19 +1,17 @@
-Yii 2 Basic Application Template
-================================
+Simple CRUD Yii 2 Basic Application Template and AngularJs
+==========================================================
 
-Yii 2 Basic Application Template is a skeleton Yii 2 application best for
-rapidly creating small projects.
+Aplikasi CRUD sederhana yang dibangun dengan PHP Framework Yii2 dan Javascript Framework AngularJs
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
+Aplikasi ini menggunakan prinsip IoC(Inversion Of Control) atau Dependency Injection, Repository
+Pattern dan SOLID pattern (masih diteliti kebenarannya :D).
 
 DIRECTORY STRUCTURE
 -------------------
 
       assets/             contains assets definition
       commands/           contains console commands (controllers)
+      components/         contains database repositories(IoC/dependency injection)
       config/             contains application configurations
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
@@ -25,46 +23,30 @@ DIRECTORY STRUCTURE
       web/                contains the entry script and Web resources
 
 
+APA YANG BERUBAH
+----------------
+
+Saya menambahkan folder ```components``` untuk mengatur struktur aplikasi ini. Jadi struktur aplikasi seperti ini :
+
+components/
+
+    AbstracForm.php
+    AbstractRepository.php
+    StudentCreateForm.php
+    StudentInterface.php
+    StudentRepository.php
+
+Jangan lupa pada file ```web\index.php``` tambahkan code dibawah ini untuk mengatur IoC Container
+
+```php
+    \Yii::$container->set('app\components\StudentInterface', 'app\components\StudentRepository');
+```
+
 
 REQUIREMENTS
 ------------
 
 The minimum requirement by this application template that your Web server supports PHP 5.4.0.
-
-
-INSTALLATION
-------------
-
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this application template using the following command:
-
-~~~
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta3"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
 
 
 CONFIGURATION
@@ -77,13 +59,60 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=app_school',
     'username' => 'root',
     'password' => '1234',
     'charset' => 'utf8',
 ];
 ```
 
-**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+**NOTE:**
 
-Also check and edit the other files in the `config/` directory to customize your application.
+
+### Nginx Server
+
+```json
+server {
+    listen 127.0.0.1:80;
+
+    server_name yii-angularjs.dev www.yii-angularjs.dev;
+    root your/path/basic/app/template/web;
+    index index.php index.html;
+
+    charset utf-8;
+    client_max_body_size 128M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+
+    }
+
+    location ~ \.php$ {
+    	fastcgi_pass 127.0.0.1:9054;
+	    fastcgi_index index.php;
+	    fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+	    include fastcgi_params;
+    }
+
+    location ~* \.(js|css|less|png|jpg|jpeg|gif|ico|woff|ttf|svg|tpl)$ {
+        expires 24h;
+        access_log off;
+    }
+
+    location = /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+
+    location = /robots.txt {
+        log_not_found off;
+        access_log off;
+    }
+
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+}
+```
