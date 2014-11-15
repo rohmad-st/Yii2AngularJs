@@ -28,13 +28,12 @@ APA YANG BERUBAH
 
 Saya menambahkan folder ```components``` untuk mengatur struktur aplikasi ini. Jadi struktur aplikasi seperti ini :
 
-components/
-
-    AbstracForm.php
-    AbstractRepository.php
-    StudentCreateForm.php
-    StudentInterface.php
-    StudentRepository.php
+    components/
+        AbstracForm.php
+        AbstractRepository.php
+        StudentCreateForm.php
+        StudentInterface.php
+        StudentRepository.php
 
 Jangan lupa pada file ```web\index.php``` tambahkan code dibawah ini untuk mengatur IoC Container
 
@@ -71,7 +70,7 @@ return [
 
 ### Nginx Server
 
-```json
+```
 server {
     listen 127.0.0.1:80;
 
