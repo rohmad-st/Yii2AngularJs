@@ -16,7 +16,7 @@ class StudentCreateForm extends AbstractForm
     }
 
     /**
-     * Get Input data
+     * Get Input data for store and update
      *
      * @return array
      */

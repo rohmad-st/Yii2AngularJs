@@ -26,6 +26,8 @@ abstract class AbstractForm
     }
 
     /**
+     * Get input data for store dan update
+     *
      * @return array
      */
     public function getInputData()
