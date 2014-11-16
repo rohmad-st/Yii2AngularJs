@@ -25,11 +25,14 @@ class StudentCreateForm extends AbstractForm
         return $this->getInputData();
     }
 
+    /**
+     * Get Input search
+     *
+     * @return mixed
+     */
     public function inputSearch()
     {
-        $query = \Yii::$app->request->getQueryParams();
-
-        return $query['s'];
+        return $this->getInputSearch();
     }
 
     /**

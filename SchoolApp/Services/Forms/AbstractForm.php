@@ -57,4 +57,17 @@ abstract class AbstractForm
     {
         return $errors = $this->model->errors;
     }
+
+    /**
+     * Get input search
+     * @todo using FullTextSearch
+     *
+     * @return mixed
+     */
+    public function getInputSearch()
+    {
+        $query = \Yii::$app->request->getQueryParams();
+
+        return $query['s'];
+    }
 }
