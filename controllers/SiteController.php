@@ -1,99 +1,49 @@
 <?php namespace app\controllers;
 
+use Faker\Factory;
 use Yii;
-use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use yii\web\Controller;
 
 class SiteController extends Controller
 {
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only'  => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow'   => true,
-                        'roles'   => ['@'],
-                    ],
-                ],
-            ],
-            'verbs'  => [
+            'verbs' => [
                 'class'   => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'generate' => ['get'],
                 ],
-            ],
-        ];
-    }
-
-    public function actions()
-    {
-        return [
-            'error'   => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class'           => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
     }
 
     public function actionIndex()
     {
-        return $this->render('index');
+        echo \Yii::$app->view->renderFile('@app/web/views/index.html');
     }
 
-    public function actionLogin()
+    public function actionGenerate($row = 10, $iterate = 1)
     {
-        if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
+        $start = microtime(true);
+        $faker = Factory::create();
+        $datas = [];
+        for ($j = 1; $j <= $iterate; $j++) {
+            for ($i = 1; $i <= $row; $i++) {
+                $datas[$i] = [
+                    $faker->name,
+                    rand(0, 1),
+                    $faker->dateTimeThisCentury->format('Y-m-d'),
+                    $faker->email,
+                    $faker->phoneNumber,
+                    $faker->streetAddress
+                ];
+            }
+            \Yii::$app->db->createCommand()->batchInsert('employee',
+                ['name', 'gender', 'born', 'email', 'phone', 'address'], $datas)->execute();
         }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
-
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    public function actionSay($message = 'Hello')
-    {
-        return $this->render('say', ['message' => $message]);
+        $time_elapsed_us = microtime(true) - $start;
+        echo ($row * $iterate) . ' = ' . $time_elapsed_us . ' <br>';
     }
 }
