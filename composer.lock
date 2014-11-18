@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d8c70e45e0a1520d4cc4dc11e72fcf1",
+    "hash": "6c5dd477c423ec521aa38250a87556d0",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
-            "version": "3.3.0.x-dev",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "16dbdbd7a2c6cfa3be4e5dcc52249e577c02c84a"
+                "reference": "9a7e365c2c4360335d25246dac11afb1f577210a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16dbdbd7a2c6cfa3be4e5dcc52249e577c02c84a",
-                "reference": "16dbdbd7a2c6cfa3be4e5dcc52249e577c02c84a",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/9a7e365c2c4360335d25246dac11afb1f577210a",
+                "reference": "9a7e365c2c4360335d25246dac11afb1f577210a",
                 "shasum": ""
             },
             "require": {
@@ -102,16 +102,16 @@
         },
         {
             "name": "bower-asset/jquery.inputmask",
-            "version": "3.1.37",
+            "version": "3.1.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
-                "reference": "c40c5c0abaf42b35139cdf97569b1ef1fad3a3d9"
+                "reference": "464cddbdea65411896468f40321e68abcc75a34c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/c40c5c0abaf42b35139cdf97569b1ef1fad3a3d9",
-                "reference": "c40c5c0abaf42b35139cdf97569b1ef1fad3a3d9",
+                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/464cddbdea65411896468f40321e68abcc75a34c",
+                "reference": "464cddbdea65411896468f40321e68abcc75a34c",
                 "shasum": ""
             },
             "require": {
@@ -312,6 +312,61 @@
             "time": "2013-11-30 08:25:19"
         },
         {
+            "name": "smarty/smarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smarty-php/smarty.git",
+                "reference": "de7310b702a2024f60c0af384b6617d0c5f406bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/de7310b702a2024f60c0af384b6617d0c5f406bb",
+                "reference": "de7310b702a2024f60c0af384b6617d0c5f406bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "libs/Smarty.class.php",
+                    "libs/SmartyBC.class.php",
+                    "libs/sysplugins/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Monte Ohrt",
+                    "email": "monte@ohrt.com"
+                },
+                {
+                    "name": "Uwe Tews",
+                    "email": "uwe.tews@googlemail.com"
+                },
+                {
+                    "name": "Rodney Rehm",
+                    "email": "rodney.rehm@medialize.de"
+                }
+            ],
+            "description": "Smarty - the compiling PHP template engine",
+            "homepage": "http://www.smarty.net",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2014-11-13 18:52:41"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
@@ -364,17 +419,74 @@
             "time": "2014-10-30 13:41:35"
         },
         {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "b87cf88f88feee256c1e1ca85ec6677f38fcc238"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b87cf88f88feee256c1e1ca85ec6677f38fcc238",
+                "reference": "b87cf88f88feee256c1e1ca85ec6677f38fcc238",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.16-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2014-11-10 14:48:15"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "0106b877d380908eea8b85c02db8ef32efb9b762"
+                "reference": "90a57d793aacb8bac2cab0fee200af45eb9d63b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/0106b877d380908eea8b85c02db8ef32efb9b762",
-                "reference": "0106b877d380908eea8b85c02db8ef32efb9b762",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/90a57d793aacb8bac2cab0fee200af45eb9d63b3",
+                "reference": "90a57d793aacb8bac2cab0fee200af45eb9d63b3",
                 "shasum": ""
             },
             "require": {
@@ -449,7 +561,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-11-09 00:02:34"
+            "time": "2014-11-17 16:51:57"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -457,12 +569,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "65130c9a7e56d54350470eb70c820d30082c708c"
+                "reference": "87b6374376087b03b1556821c770ec6fbe246b31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/65130c9a7e56d54350470eb70c820d30082c708c",
-                "reference": "65130c9a7e56d54350470eb70c820d30082c708c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/87b6374376087b03b1556821c770ec6fbe246b31",
+                "reference": "87b6374376087b03b1556821c770ec6fbe246b31",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +607,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2014-11-07 22:41:01"
+            "time": "2014-11-16 17:57:10"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -543,6 +655,53 @@
                 "yii2"
             ],
             "time": "2014-11-07 16:17:16"
+        },
+        {
+            "name": "yiisoft/yii2-smarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-smarty.git",
+                "reference": "a092175281c28a44131396195b58c232adca8832"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/a092175281c28a44131396195b58c232adca8832",
+                "reference": "a092175281c28a44131396195b58c232adca8832",
+                "shasum": ""
+            },
+            "require": {
+                "smarty/smarty": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\smarty\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru"
+                }
+            ],
+            "description": "The Smarty integration for the Yii framework",
+            "keywords": [
+                "renderer",
+                "smarty",
+                "yii2"
+            ],
+            "time": "2014-11-04 10:05:47"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -593,6 +752,53 @@
                 "yii2"
             ],
             "time": "2014-10-12 20:44:45"
+        },
+        {
+            "name": "yiisoft/yii2-twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-twig.git",
+                "reference": "4e7c5c585baade781f469ae71f75b3ad8c28378a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/4e7c5c585baade781f469ae71f75b3ad8c28378a",
+                "reference": "4e7c5c585baade781f469ae71f75b3ad8c28378a",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\twig\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru"
+                }
+            ],
+            "description": "The Twig integration for the Yii framework",
+            "keywords": [
+                "renderer",
+                "twig",
+                "yii2"
+            ],
+            "time": "2014-10-25 12:30:03"
         }
     ],
     "packages-dev": [
@@ -629,12 +835,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "8f673c9e31c1aa5ce1e4d289be55c2384ee0ffd2"
+                "reference": "44eae4deeb065454e68b3c9911181285f01003c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/8f673c9e31c1aa5ce1e4d289be55c2384ee0ffd2",
-                "reference": "8f673c9e31c1aa5ce1e4d289be55c2384ee0ffd2",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44eae4deeb065454e68b3c9911181285f01003c6",
+                "reference": "44eae4deeb065454e68b3c9911181285f01003c6",
                 "shasum": ""
             },
             "require": {
@@ -651,9 +857,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Faker": "src/",
-                    "Faker\\PHPUnit": "test/"
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -671,7 +876,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-11-07 08:38:46"
+            "time": "2014-11-12 17:27:49"
         },
         {
             "name": "phpspec/php-diff",
