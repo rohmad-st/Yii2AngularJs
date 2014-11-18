@@ -59,9 +59,9 @@ class StudentController extends Controller
      */
     public function actionIndex()
     {
-        $s = $this->student->getCreationForm()->inputSearch();
+        $term = $this->student->getCreationForm()->inputSearch();
 
-        return $this->student->find($s);
+        return $this->student->find($term);
     }
 
     /**

@@ -12,7 +12,7 @@ interface StudentInterface
      * @param     $s
      * @return mixed
      */
-    public function find($s);
+    public function find($term);
 
     /**
      * Get a Student

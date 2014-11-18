@@ -25,9 +25,9 @@ class StudentRepository extends AbstractRepository implements StudentInterface
      * @param     $s
      * @return array|\yii\db\ActiveRecord[]
      */
-    public function find($s)
+    public function find($term)
     {
-        $query = $this->model->find()->andFilterWhere(['like', 'nama', $s]);
+        $query = $this->model->find()->andFilterWhere(['like', 'name', $term]);
 
         return $this->getPaginate($query);
     }

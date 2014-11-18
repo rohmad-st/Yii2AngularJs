@@ -70,6 +70,6 @@ abstract class AbstractForm
     {
         $query = \Yii::$app->request->getQueryParams();
 
-        return $query['s'];
+        return $query['term'];
     }
 }
