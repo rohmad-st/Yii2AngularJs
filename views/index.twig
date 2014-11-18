@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+        <title>{% block title %}{% endblock %} - SchoolApp</title>
+    {% endblock %}
+</head>
+<body>
+<div id="content">{% block content %}{% endblock %}</div>
+
+{% block scripts %}
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/js/angular.min.js"></script>
+    <script src="vendor/js/angular-ui-router.min.js"></script>
+{% endblock %}
+</body>
+</html>

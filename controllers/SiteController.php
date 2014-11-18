@@ -21,7 +21,9 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        echo \Yii::$app->view->renderFile('@app/web/views/index.html');
+        $request = Yii::$app->getRequest();
+
+        echo \Yii::$app->view->renderFile('@app/views/student.twig', ['csrf' => $request->getCsrfToken()]);
     }
 
     public function actionGenerate($row = 10, $iterate = 1)
