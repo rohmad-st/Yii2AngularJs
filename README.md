@@ -1,4 +1,4 @@
-Simple CRUD Yii 2 Basic Application Template and AngularJs
+Simple CRUD Yii2 AngularJs
 ==========================================================
 
 Aplikasi CRUD sederhana yang dibangun dengan PHP Framework Yii2 dan Javascript Framework AngularJs
