@@ -1,10 +1,9 @@
-Simple CRUD Yii2 AngularJs
+Simple CRUD Yii2 and AngularJs
 ==========================================================
 
-Aplikasi CRUD sederhana yang dibangun dengan PHP Framework Yii2 dan Javascript Framework AngularJs
+Simple CRUD application built with PHP Framework Yii2 and Javascript Framework AngularJs.
 
-Aplikasi ini menggunakan prinsip IoC(Inversion Of Control) atau Dependency Injection, Repository
-Pattern dan SOLID pattern (masih diteliti kebenarannya :D).
+These applications use the IoC (Inversion Of Control) or Dependency Injection and Repository Pattern.
 
 DIRECTORY STRUCTURE
 -------------------
@@ -28,7 +27,7 @@ DIRECTORY STRUCTURE
       web/                          contains the entry script and Web resources
 
 
-Jangan lupa pada file ```web\index.php``` tambahkan code dibawah ini untuk Memanage IoC Container
+Don't forget the file ```web\index.php``` add the code below to Manage the IoC Container
 
 ```php
     \Yii::$container->set('app\SchoolApp\Repositories\StudentInterface', 'app\SchoolApp\Repositories\ActiveRecord\StudentRepository');
@@ -57,7 +56,7 @@ return [
     'charset' => 'utf8',
 ];
 ```
-### Create Database
+### Create Database name app_school then create the table students
 ```
 -- ----------------------------
 -- Table structure for `students`
@@ -73,7 +72,7 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 ```
 
-### Nginx Server
+### Nginx Server Configuration
 
 ```
 server {
@@ -120,18 +119,7 @@ server {
     }
 }
 ```
-
-**NOTE:** Sengaja membuat aplikasi ini tanpa menggunakan CRUD Generator dari Gii agar saya sendiri faham alur kerja dari framework
-ini. Maklum saya belum genap 1 minggu belajar Yii2 ini, hanya bermodal Guide dan liat code didalamnya.
-
-### CURHAT
-Jujur saya kurang begitu puas dengan hasil dari output query Yii yang sulit saya fahami(karena terbatasnya kemampuan saya - alasan pribadi).
-Misal untuk menampilkan data dengan pagination yang dengan mudah diolah di frontend misal jika menggunakan AngualrJs atau framework MVC lainnya.
-
-Oleh sebab itu saya coba membuat outputnya sama dengan ```Eloquent``` punya framework Laravel yang defaultnya adalah ```json```,
-untuk membuatnya sih simple tinggal set output yang akan dikeluarkan menjadi ```json``` bisa dilihat pada file ```AbstractRepository.php``` dan ```StudentRepository.php```
-
-Hasilnya akan menjadi seperti dibawah ini :
+The output that I spend on this application in ```json``` format, in order to make easier the frontend developer, the output same the Eloquent from Laravel PHP Framework.
 
 ```
 {
@@ -158,8 +146,9 @@ Hasilnya akan menjadi seperti dibawah ini :
 }
 ```
 
-
-
+TESTING BAKCEND
+===============
+You can test the CRUD using rest client services, such as the Postman extention for Chrome.
 
 AUTHOR
 ------
