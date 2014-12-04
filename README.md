@@ -146,12 +146,9 @@ The output that I spend on this application in ```json``` format, in order to ma
 }
 ```
 
-TESTING BAKCEND
----------------
+TESTING ENDPOINTS BAKCEND
+-------------------------
 You can test the CRUD using rest client services, such as the Postman extention for Chrome.
-
-FRONTEND COMING SOON
---------------------
 
 ```
 Url path = http://yii-angularjs.dev/index.php?r=student&page=1&per_page=10&term=
@@ -161,6 +158,11 @@ Url path = http://yii-angularjs.dev/index.php?r=student&page=1&per_page=10&term=
 // the parameter of the per_page by 'per_page'
 // by default the data is displayed in the pagination is 20 data
 ```
+
+
+FRONTEND COMING SOON
+--------------------
+
 
 AUTHOR
 ------
