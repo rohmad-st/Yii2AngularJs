@@ -147,11 +147,11 @@ The output that I spend on this application in ```json``` format, in order to ma
 ```
 
 TESTING BAKCEND
-===============
+---------------
 You can test the CRUD using rest client services, such as the Postman extention for Chrome.
 
 FRONTEND COMING SOON
-====================
+--------------------
 
 ```
 Url path = http://yii-dua.dev/index.php?r=student&page=1&per_page=10&term=
