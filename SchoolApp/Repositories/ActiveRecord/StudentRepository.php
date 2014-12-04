@@ -27,7 +27,7 @@ class StudentRepository extends AbstractRepository implements StudentInterface
      */
     public function find($term)
     {
-        $query = $this->model->find()->andFilterWhere(['like', 'name', $term]);
+        $query = $this->model->find()->andFilterWhere(['like', 'nama', $term]);
 
         return $this->getPaginate($query);
     }
