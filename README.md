@@ -154,7 +154,7 @@ FRONTEND COMING SOON
 --------------------
 
 ```
-Url path = http://yii-dua.dev/index.php?r=student&page=1&per_page=10&term=
+Url path = http://yii-angularjs.dev/index.php?r=student&page=1&per_page=10&term=
 
 // the parameter of the search by 'term'
 // the parameter of the page by 'page'
