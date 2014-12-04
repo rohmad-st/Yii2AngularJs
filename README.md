@@ -150,6 +150,10 @@ TESTING BAKCEND
 ===============
 You can test the CRUD using rest client services, such as the Postman extention for Chrome.
 
+FRONTEND COMING SOON
+====================
+
+
 AUTHOR
 ------
 
