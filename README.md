@@ -159,6 +159,33 @@ Url path = http://yii-angularjs.dev/index.php?r=student&page=1&per_page=10&term=
 // by default the data is displayed in the pagination is 20 data
 ```
 
+HTTP Method Allowed
+-------------------
+
+      index/                    get the data with pagination and search
+      create/                   post the new record
+      update/                   update a record
+      view/                     show a record
+      delete/                   delete a record
+
+// the HTTP method is allowed can be set in the behaviors method such as
+```php
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class'   => VerbFilter::className(),
+                'actions' => [
+                    'index'  => ['get'],
+                    'create' => ['post'],
+                    'update' => ['post'],
+                    'view'   => ['get'],
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+```
 
 FRONTEND COMING SOON
 --------------------
