@@ -146,7 +146,7 @@ The output that I spend on this application in ```json``` format, in order to ma
 }
 ```
 
-TESTING ENDPOINTS BAKCEND
+TESTING ENDPOINTS BACKEND
 -------------------------
 You can test the CRUD using rest client services, such as the Postman extention for Chrome.
 
