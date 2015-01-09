@@ -3,11 +3,12 @@
 <head>
     {% block head %}
         <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
-        <title>{% block title %}{% endblock %} - SchoolApp</title>
+        <link rel="stylesheet" href="vendor/css/dashboard.css">
+        <title>{% block title %}{% endblock %} - Yii2 AngularJs</title>
     {% endblock %}
 </head>
 <body>
-<div id="content">{% block content %}{% endblock %}</div>
+{% block content %}{% endblock %}
 
 {% block scripts %}
     <script src="vendor/js/jquery.min.js"></script>
