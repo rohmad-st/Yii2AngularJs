@@ -1,4 +1,4 @@
-<?php namespace app\SchoolApp\Services\Forms;
+<?php namespace app\SchoolApp\Services\Forms\Employee;
 
 
 use app\EmpApp\Models\Employee;

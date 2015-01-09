@@ -3,7 +3,7 @@ namespace app\EmpApp\Repositories\Employee;
 
 use app\EmpApp\Models\Employee;
 use app\EmpApp\Repositories\AbstractRepository;
-use app\SchoolApp\Services\Forms\EmployeeCreateForm;
+use app\SchoolApp\Services\Forms\Employee\EmployeeCreateForm;
 
 class EmployeeRepository extends AbstractRepository implements EmployeeInterface
 {
