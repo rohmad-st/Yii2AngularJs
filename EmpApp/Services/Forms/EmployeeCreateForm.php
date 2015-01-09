@@ -1,18 +1,19 @@
 <?php namespace app\SchoolApp\Services\Forms;
 
 
-use app\SchoolApp\Students;
+use app\EmpApp\Models\Employee;
+use app\EmpApp\Services\Forms\AbstractForm;
 
-class StudentCreateForm extends AbstractForm
+class EmployeeCreateForm extends AbstractForm
 {
     /**
      * Create Instance Model
      *
-     * @param Students $students
+     * @param Employee $employee
      */
-    public function __construct(Students $students)
+    public function __construct(Employee $employee)
     {
-        $this->model = $students;
+        $this->model = $employee;
     }
 
     /**

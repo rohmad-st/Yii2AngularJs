@@ -1,4 +1,4 @@
-<?php namespace app\SchoolApp\Repositories\ActiveRecord;
+<?php namespace app\EmpApp\Repositories;
 
 use yii\data\Pagination;
 use yii\db\ActiveRecord;

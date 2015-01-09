@@ -1,9 +1,9 @@
-<?php namespace app\SchoolApp;
-
+<?php
+namespace app\EmpApp\Models;
 
 use yii\db\ActiveRecord;
 
-class Students extends ActiveRecord
+class Employee extends ActiveRecord
 {
 
     /**
@@ -17,14 +17,14 @@ class Students extends ActiveRecord
     }
 
     /**
-     * Validation Rules
+     * Set validation rules
      *
      * @return array
      */
     public function rules()
     {
         return [
-            [['nama', 'jenis_kelamin', 'alamat', 'nomer_telepon'], 'required'],
+            [['birth_date', 'first_name', 'last_name', 'gender', 'hire_date'], 'required'],
         ];
     }
-} 
+}

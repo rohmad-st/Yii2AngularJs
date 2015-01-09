@@ -1,4 +1,4 @@
-<?php namespace app\SchoolApp\Services\Forms;
+<?php namespace app\EmpApp\Services\Forms;
 
 use yii\base\Model;
 
