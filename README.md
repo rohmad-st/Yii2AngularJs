@@ -18,7 +18,7 @@ DIRECTORY STRUCTURE
       controllers/                          contains Web controller classes
       mail/                                 contains view files for e-mails
       runtime/                              contains files generated during runtime
-      Emp/
+      EmpApp/
             Models/                         contains model layer
             Repositories/                   contains database repositories layer
                     Employee/               contains Employee database repositories
