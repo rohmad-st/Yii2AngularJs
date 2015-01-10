@@ -21,21 +21,12 @@ DIRECTORY STRUCTURE
       EmpApp/
             Models/                         contains model layer
             Repositories/                   contains database repositories layer
-                    Employee/               contains Employee database repositories
             Services/
                     Forms/                  contains form services
-                            /Employee       contains Employee form services
       tests/                                contains various tests for the basic application
       vendor/                               contains dependent 3rd-party packages
       views/                                contains view files for the Web application
       web/                                  contains the entry script and Web resources
-
-
-Don't forget the file ```web\index.php``` add the code below to Manage the IoC Container
-
-```php
-    \Yii::$container->set('app\EmpApp\Repositories\Employee\EmployeeInterface', 'app\EmpApp\Repositories\Employee\EmployeeRepository');
-```
 
 
 REQUIREMENTS
@@ -60,7 +51,7 @@ return [
     'charset' => 'utf8',
 ];
 ```
-### Create Database name app_employee then create the table students
+### Create Database name app_employee
 ```
 // run the migration using terminal
 $ yii migrate
@@ -113,7 +104,8 @@ server {
     }
 }
 ```
-The output that I spend on this application in ```json``` format, in order to make easier the frontend developer, the output same the Eloquent from Laravel PHP Framework.
+The output that I spend on this application in ```json``` format, in order to make easier the frontend developer,
+the output same the Eloquent from Laravel PHP Framework.
 
 ```
 {
@@ -145,7 +137,7 @@ TESTING ENDPOINTS BACKEND
 You can test the CRUD using rest client services, such as the Postman extention for Chrome.
 
 ```
-Url path = http://yii-angularjs.dev/index.php?r=student&page=1&per_page=10&s=
+Url path = http://yii-angularjs.dev/index.php?r=employee&page=1&per_page=10&s=
 
 // the parameter of the search by 's'
 // the parameter of the page by 'page'
