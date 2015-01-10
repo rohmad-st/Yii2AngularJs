@@ -3,7 +3,7 @@ namespace app\EmpApp\Models;
 
 use yii\db\ActiveRecord;
 
-class Employee extends ActiveRecord
+class Department extends ActiveRecord
 {
 
     /**
@@ -13,7 +13,7 @@ class Employee extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'employees';
+        return 'departments';
     }
 
     /**
@@ -24,7 +24,7 @@ class Employee extends ActiveRecord
     public function rules()
     {
         return [
-            [['birth_date', 'first_name', 'last_name', 'gender', 'hire_date'], 'required'],
+            [['dept_name'], 'required'],
         ];
     }
 }

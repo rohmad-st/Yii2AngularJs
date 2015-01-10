@@ -1,30 +1,30 @@
 <?php
 namespace app\controllers\api\v1;
 
-use app\EmpApp\Repositories\Employee\EmployeeInterface;
+use app\EmpApp\Repositories\Department\DepartmentInterface;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 
-class EmployeeController extends Controller
+class DepartmentController extends Controller
 {
     /**
-     * Employee Repository Interface
+     * Department Repository Interface
      *
-     * @var EmployeeInterface $employee
+     * @var DepartmentInterface $department
      */
-    protected $employee;
+    protected $department;
 
     /**
      * Create a new EmployeeController instance
      *
-     * @param string            $id
-     * @param \yii\base\Module  $module
-     * @param EmployeeInterface $employee
-     * @param array             $config
+     * @param string              $id
+     * @param \yii\base\Module    $module
+     * @param DepartmentInterface $department
+     * @param array               $config
      */
-    public function __construct($id, $module, EmployeeInterface $employee, $config = [])
+    public function __construct($id, $module, DepartmentInterface $department, $config = [])
     {
-        $this->employee = $employee;
+        $this->department = $department;
         // todo remove it, just for test by using Postman RestClient
         \Yii::$app->getRequest()->enableCsrfValidation = false;
         parent::__construct($id, $module, $config);
@@ -59,9 +59,9 @@ class EmployeeController extends Controller
      */
     public function actionIndex()
     {
-        $term = $this->employee->getCreationForm()->inputSearch();
+        $term = $this->department->getCreationForm()->inputSearch();
 
-        return $this->employee->find($term);
+        return $this->department->find($term);
     }
 
     /**
@@ -71,11 +71,11 @@ class EmployeeController extends Controller
      */
     public function actionCreate()
     {
-        $form = $this->employee->getCreationForm();
+        $form = $this->department->getCreationForm();
         $data = $form->inputData();
 
         if (is_null($form->isValid())) {
-            return $this->employee->create($data);
+            return $this->department->create($data);
         } else {
             return $form->isErrors();
         }
@@ -89,12 +89,12 @@ class EmployeeController extends Controller
      */
     public function actionUpdate($id)
     {
-        $form = $this->employee->getCreationForm();
-        $employee = $this->employee->findById($id);
+        $form = $this->department->getCreationForm();
+        $department = $this->department->findById($id);
         $data = $form->inputData();
 
         if (is_null($form->isValid())) {
-            return $this->employee->update($employee, $data);
+            return $this->department->update($department, $data);
         } else {
             return $form->isErrors();
         }
@@ -108,7 +108,7 @@ class EmployeeController extends Controller
      */
     public function actionView($id)
     {
-        return $this->employee->findById($id);
+        return $this->department->findById($id);
     }
 
     /**
@@ -119,6 +119,6 @@ class EmployeeController extends Controller
      */
     public function actionDelete($id)
     {
-        return $this->employee->destroy($id);
+        return $this->department->destroy($id);
     }
 }
