@@ -13,7 +13,7 @@ class Employee extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'employees';
+        return 'employee';
     }
 
     /**
@@ -24,7 +24,7 @@ class Employee extends ActiveRecord
     public function rules()
     {
         return [
-            [['birth_date', 'first_name', 'last_name', 'gender', 'hire_date'], 'required'],
+            [['name', 'gender', 'born', 'email', 'phone', 'address'], 'required'],
         ];
     }
 }
