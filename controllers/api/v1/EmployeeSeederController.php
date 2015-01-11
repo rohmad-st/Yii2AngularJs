@@ -7,6 +7,11 @@ use yii\web\Controller;
 
 class EmployeeSeederController extends Controller
 {
+    /**
+     * Set allowed request method
+     *
+     * @return array
+     */
     public function behaviors()
     {
         return [
@@ -19,6 +24,9 @@ class EmployeeSeederController extends Controller
         ];
     }
 
+    /**
+     * View index
+     */
     public function actionIndex()
     {
         $request = Yii::$app->getRequest();
@@ -26,6 +34,15 @@ class EmployeeSeederController extends Controller
         echo \Yii::$app->view->renderFile('@app/views/student.twig', ['csrf' => $request->getCsrfToken()]);
     }
 
+    /**
+     * Generate sample data using Faker, it's Awesome high quality data generator
+     * Special thank's to  حافظ مخلصين for that already gives sample code
+     * https://www.facebook.com/hafidm
+     *
+     * @param int $row
+     * @param int $iterate
+     * @throws \yii\db\Exception
+     */
     public function actionGenerate($row = 10, $iterate = 1)
     {
         $start = microtime(true);
