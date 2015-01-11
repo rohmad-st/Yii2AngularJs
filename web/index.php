@@ -16,10 +16,6 @@ require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 \Yii::$container->set('app\EmpApp\Repositories\Employee\EmployeeInterface',
     'app\EmpApp\Repositories\Employee\EmployeeRepository');
 
-// Register The Department Service
-\Yii::$container->set('app\EmpApp\Repositories\Department\DepartmentInterface',
-    'app\EmpApp\Repositories\Department\DepartmentRepository');
-
 $config = require(__DIR__ . '/../config/web.php');
 
 (new yii\web\Application($config))->run();
